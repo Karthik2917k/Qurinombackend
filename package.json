@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --build",
+    "start": "ts-node src/index.ts",
+    "nodemon": "nodemon src/index.ts",
+    "build": "tsc",
     "build:watch": "tsc --watch",
-    "start": "prisma generate && npm run build && node dist/index.js",
     "start:watch": "rm -rf \"./dist/*\" && tsc-watch --onSuccess \"node -r source-map-support/register .\"",
     "debug": "rm -rf \"./dist/*\" && tsc-watch --onSuccess \"node --inspect -r source-map-support/register .\""
   },
@@ -21,7 +22,6 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
-    "react-cookie": "^7.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
