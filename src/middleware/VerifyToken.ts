@@ -13,7 +13,7 @@ const verifyToken = async (req: Request, res: Response, next: NextFunction) => {
     }
     const decoded: any = jwt.verify(
       token,
-      process.envJWTSECRETSECRET || "JWT_SECRET"
+      process.env.JWTSECRET || "JWT_SECRET"
     );
 
     if (!decoded) {

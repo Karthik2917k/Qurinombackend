@@ -58,7 +58,7 @@ export const loginUser = async (req: Request, res: Response) => {
         role: "user",
         name: existingUser.name,
       },
-      process.envJWTSECRETSECRET || "JWT_SECRET",
+      process.env.JWTSECRET || "JWT_SECRET",
       { expiresIn: "1d" }
     );
     res.cookie("token", token);

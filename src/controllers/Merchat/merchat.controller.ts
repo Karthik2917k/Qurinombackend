@@ -67,7 +67,7 @@ export const loginMerchant = async (req: Request, res: Response) => {
         role: "merchant",
         name: existingMerchat.name,
       },
-      process.envJWTSECRETSECRET || "JWT_SECRET",
+      process.env.JWTSECRET || "JWT_SECRET",
       { expiresIn: "1d" }
     );
     res.cookie("token", token);
