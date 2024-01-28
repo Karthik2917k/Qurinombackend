@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "node dist/index.js",
     "nodemon": "nodemon src/index.ts",
-    "build": "tsc",
+    "build": "npx prisma generate && tsc",
     "build:watch": "tsc --watch",
     "start:watch": "rm -rf \"./dist/*\" && tsc-watch --onSuccess \"node -r source-map-support/register .\"",
     "debug": "rm -rf \"./dist/*\" && tsc-watch --onSuccess \"node --inspect -r source-map-support/register .\""
