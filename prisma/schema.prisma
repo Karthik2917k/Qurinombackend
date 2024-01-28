@@ -3,12 +3,11 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "./prisma/prisma/client"
 }
 
 datasource db {
   provider = "mongodb"
-  url      = env("DATABASEURL")
+  url      = env("DATABASE_URL")
 }
 
 model User {

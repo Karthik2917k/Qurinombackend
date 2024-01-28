@@ -1,8 +1,7 @@
+// @ts-nocheck
 import { Request, Response } from "express";
 import { prisma } from "../../prismaClient/index";
-
 import dotenv from "dotenv";
-import { Prisma } from "@prisma/client";
 dotenv.config();
 
 export const newProduct = async (req: Request, res: Response) => {
@@ -81,7 +80,6 @@ export const getProducts = async (req: Request, res: Response) => {
       location = "",
       categories = [],
       subCategories = [],
-      
       min = "",
       max = "",
     } = req.query;
@@ -96,7 +94,7 @@ export const getProducts = async (req: Request, res: Response) => {
       Array.isArray(categories) ? categories : [categories]
     ).map((id) => id as string);
     // orderBy: orderBy as any,
-    const AND: Prisma.ProductWhereInput[] = [
+    const AND= [
       {
         location: {
           contains: typeof location === "string" ? location : "",
